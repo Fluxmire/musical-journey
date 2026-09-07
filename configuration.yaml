@@ -39,9 +39,9 @@ llm_clients:
     vllm:
       model: "Fluxmire/Qwen-3.6-27B-ChonkyCat"
       revision: "dc2d6fc80a4dccf8d9387e23e2281a9e0cb4576b"
-      gpu_ids: "0,1,2"
+      gpu_ids: "0,1"
       tensor_parallel_size: 1
-      data_parallel_size: 3
+      data_parallel_size: 2
       vllm_bin: "/opt/vllm-coder-env/bin/vllm"
       gpu_memory_utilization: 0.9
       max_model_len: 81920
@@ -54,9 +54,9 @@ llm_clients:
     vllm:
       model: "zai-org/GLM-4.6V-Flash"
       revision: "411bb4d77144a3f03accbf4b780f5acb8b7cde4e" 
-      gpu_ids: "3"
+      gpu_ids: "2,3"
       tensor_parallel_size: 1
-      data_parallel_size: 1
+      data_parallel_size: 2
       gpu_memory_utilization: 0.5
       max_model_len: 81920
       max_num_seqs: 196
@@ -103,7 +103,7 @@ actors:
     seed: 42
     enable_thinking: false
     multimodal: true
-    ensemble_size: 60
+    ensemble_size: 40
     ensemble_temperature: 0.6
     providers:
       order: []
